@@ -1,0 +1,8 @@
+#!/bin/sh -e
+if ! [ -f /usr/bin/rustup ]; then
+    echo "Rustup not found. Installing..."
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+else
+    rustup self update
+    rustup update
+fi
