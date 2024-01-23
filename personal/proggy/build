@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+mkdir -pv $1/usr/share/fonts/TTF
+
+echo "Installing ProggyCleanCE, ProggyCleanSZ, and ProggySquareSZ to /usr/share/fonts/TTF."
+
+cp ProggyOriginal/ProggyCleanCE.ttf $1/usr/share/fonts/TTF
+cp ProggyOriginal/ProggyCleanSZ.ttf $1/usr/share/fonts/TTF
+cp ProggyOriginal/ProggySquareSZ.ttf $1/usr/share/fonts/TTF
