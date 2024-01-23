@@ -1,0 +1,3 @@
+#!/bin/sh -e
+source /opt/cargo/env
+rustup default stable

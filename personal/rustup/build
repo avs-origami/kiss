@@ -1,7 +1,18 @@
 #!/bin/sh -e
 if ! [ -f /usr/bin/rustup ]; then
     echo "Rustup not found. Installing..."
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    mkdir -pv $1/opt
+    CARGO_HOME=$1/opt/cargo RUSTUP_HOME=$1/opt/rustup sh sh.rustup.rs -y --profile minimal --no-modify-path
+    sed -i 's|/home.*rustup||g' $1/opt/cargo/env
+    echo -e "export CARGO_HOME=/opt/cargo\nexport RUSTUP_HOME=/opt/rustup" >> $1/opt/cargo/env
+    
+    mkdir -p $1/etc/profile.d
+    cp ./cargo.sh $1/etc/profile.d
+
+    # Rustup is rust, so fake installation of rust
+    mkdir -p $1/var/db/kiss/installed/rust
+    cp version $1/var/db/kiss/installed/rust
+    cp build $1/var/db/kiss/installed/rust
 else
     rustup self update
     rustup update

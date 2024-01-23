@@ -1,0 +1,6 @@
+#!/bin/sh -e
+RUSTFLAGS='-lxcb -lXau' cargo build --release
+mkdir -pv $1/usr/bin
+cp target/release/turtle $1/usr/bin
+mkdir -pv $1/usr/share/doc/turtle
+cp config.ron $1/usr/share/doc/turtle

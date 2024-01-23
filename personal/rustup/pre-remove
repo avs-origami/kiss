@@ -1,2 +1,2 @@
 #!/bin/sh -e
-rustup self uninstall
+/opt/cargo/bin/rustup self uninstall
