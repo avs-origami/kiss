@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+export DESTDIR="$1"
+
+mv config.h config.def.h
+
+# Install terminfo to right location.
+export TERMINFO="$1/usr/share/terminfo"
+mkdir -p "$TERMINFO"
+
+make
+make PREFIX=/usr install
