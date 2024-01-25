@@ -1,0 +1,12 @@
+#!/bin/sh -e
+if ! [ -f $HOME/.config/ubar/config.h ]; then
+    echo -e "\e[93mWarning:\e[0m $HOME/.config/ubar/config.h not found, using default"
+else
+    cp -v $HOME/.config/ubar/config.h ./
+fi
+
+make
+mkdir -pv $1/usr/bin
+mkdir -pv $1/usr/share/doc/ubar
+cp ubar $1/usr/bin
+cp bar.sh $1/usr/share/doc/ubar

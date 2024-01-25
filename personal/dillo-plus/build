@@ -1,0 +1,4 @@
+#!/bin/sh -e
+cp Makefile.options.Linux Makefile.options
+PREFIX=$1/usr make
+PREFIX=$1/usr make install

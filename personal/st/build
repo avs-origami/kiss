@@ -2,7 +2,11 @@
 
 export DESTDIR="$1"
 
-mv config.h config.def.h
+if ! [ -f $HOME/.config/st/config.h ]; then
+    echo -e "\e[0;93mWarning:\e[0m $HOME/.config/st/config.h not found, using default config"
+else
+    cp -v $HOME/.config/st/config.h ./
+fi
 
 # Install terminfo to right location.
 export TERMINFO="$1/usr/share/terminfo"

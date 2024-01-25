@@ -1,0 +1,3 @@
+#!/bin/sh -e
+./configure && ninja
+ninja install
