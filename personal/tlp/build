@@ -1,0 +1,5 @@
+#!/bin/sh -e
+make install
+make install-man
+mkdir -pv $1/etc/sv/tlp
+cp run $1/etc/sv/tlp

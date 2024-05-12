@@ -1,0 +1,10 @@
+#!/bin/sh
+if ! [ -f $HOME/.config/pingify/config.h ]; then
+    echo -e "\e[93mWarning:\e[0m $HOME/.config/pingify/config.h not found, using default"
+else
+    cp -v $HOME/.config/pingify/config.h ./
+fi
+
+make
+mkdir -pv $1/usr/bin
+cp -v pingify $1/usr/bin

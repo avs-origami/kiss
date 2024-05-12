@@ -1,0 +1,4 @@
+#!/bin/sh -e
+sed -i "1s@.*@DESTDIR=$DESTDIR/usr@" Makefile
+make
+make install

@@ -9,4 +9,5 @@ make
 mkdir -pv $1/usr/bin
 mkdir -pv $1/usr/share/doc/ubar
 cp ubar $1/usr/bin
-cp bar.sh $1/usr/share/doc/ubar
+cp bar_left.sh $1/usr/share/doc/ubar
+cp bar_right.sh $1/usr/share/doc/ubar

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec tlp init start 2>&1

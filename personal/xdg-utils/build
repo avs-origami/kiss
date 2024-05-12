@@ -1,0 +1,5 @@
+#!/bin/sh -e
+./configure --prefix=/usr --mandir=/usr/share/man
+sed -i 's:$(XMLTO):$(XMLTO) --skip-validation:g' scripts/Makefile
+make
+make install

@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -pv $1/usr/share/themes/Nordic
+cp -r ./* $1/usr/share/themes/Nordic
